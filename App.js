@@ -1,19 +1,49 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { LinearGradient } from 'expo-linear-gradient';
+import CountrySelection from './src/screens/CountrySelection';
+import AssessmentForm from './src/screens/AssessmentForm';
+import { colors } from './src/theme/colors';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>欢迎来到主页面!</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="CountrySelection"
+        screenOptions={{
+          headerBackground: () => (
+            <LinearGradient
+              colors={[colors.gradient.start, colors.gradient.end]}
+              style={{ flex: 1 }}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
+            />
+          ),
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: '600',
+          },
+          cardStyle: { backgroundColor: colors.background }
+        }}
+      >
+        <Stack.Screen 
+          name="CountrySelection" 
+          component={CountrySelection}
+          options={{
+            title: '选择目标国家',
+          }}
+        />
+        <Stack.Screen 
+          name="AssessmentForm" 
+          component={AssessmentForm}
+          options={{
+            title: '海外求职评估',
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-}); 
+} 
