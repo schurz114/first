@@ -1,2 +1,5 @@
 import 'react-native-gesture-handler';
-// ... 其他现有的导入 
+import { registerRootComponent } from 'expo';
+import App from './App';
+
+registerRootComponent(App); 
