@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "YourAppName",
-    "slug": "your-app-slug",
+    "name": "海外求职评估",
+    "slug": "overseas-job-assessment",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,13 +15,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.overseasjobassessment"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
-    }
+      },
+      "package": "com.yourcompany.overseasjobassessment"
+    },
+    "plugins": [
+      "expo-linear-gradient"
+    ]
   }
 } 
