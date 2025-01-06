@@ -9,7 +9,7 @@ import AssessmentForm from '../screens/AssessmentForm';
 
 const Stack = createStackNavigator();
 
-const AppNavigator = () => {
+export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -47,6 +47,4 @@ const AppNavigator = () => {
       </Stack.Navigator>
     </NavigationContainer>
   );
-};
-
-export default AppNavigator; 
+} 
