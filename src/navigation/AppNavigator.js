@@ -3,9 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '../theme/colors';
-
-import CountrySelection from '../screens/CountrySelection';
-import AssessmentForm from '../screens/AssessmentForm';
+import ChargerMap from '../screens/ChargerMap';
 
 const Stack = createStackNavigator();
 
@@ -13,7 +11,6 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="CountrySelection"
         screenOptions={{
           headerBackground: () => (
             <LinearGradient
@@ -23,7 +20,7 @@ export default function AppNavigator() {
               end={{ x: 1, y: 0 }}
             />
           ),
-          headerTintColor: '#fff',
+          headerTintColor: colors.text.white,
           headerTitleStyle: {
             fontWeight: '600',
           },
@@ -31,17 +28,10 @@ export default function AppNavigator() {
         }}
       >
         <Stack.Screen 
-          name="CountrySelection" 
-          component={CountrySelection}
+          name="ChargerMap" 
+          component={ChargerMap}
           options={{
-            title: '选择目标国家',
-          }}
-        />
-        <Stack.Screen 
-          name="AssessmentForm" 
-          component={AssessmentForm}
-          options={{
-            title: '海外求职评估',
+            title: '充电桩查找',
           }}
         />
       </Stack.Navigator>

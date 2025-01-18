@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "海外求职评估",
-    "slug": "overseas-job-assessment",
+    "name": "德国充电桩查找",
+    "slug": "germany-ev-charger-finder",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,7 +16,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yourcompany.overseasjobassessment"
+      "bundleIdentifier": "com.yourcompany.evchargerfinder",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "我们需要访问您的位置以显示附近的充电桩",
+        "NSLocationAlwaysUsageDescription": "我们需要访问您的位置以显示附近的充电桩"
+      }
     },
     "android": {
       "adaptiveIcon": {
